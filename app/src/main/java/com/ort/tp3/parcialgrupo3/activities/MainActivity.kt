@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var drawerLayout : DrawerLayout
     private lateinit var nav_view : NavigationView
+    lateinit var appBarConfiguration: AppBarConfiguration   //BARRA SUPERIOR
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +29,16 @@ class MainActivity : AppCompatActivity() {
         nav_view.setupWithNavController(navController)
 
         NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
+
+        //NAVIGATION UP BUTTON (FLECHITA PARA ATRAS SIEMPRE VUELVE AL HOME)
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawer_layout) //SET UP CON ID DRAWER DEL FRAGMENT
+        NavigationUI.setupActionBarWithNavController(this, navController, drawer_layout) //SET UP CON ID DRAWER DEL FRAGMENT
+
+        //DRAWER LAYOUT
+        NavigationUI.setupWithNavController(nav_view, navController) //SET UP CON ID NAV VIEW DEL FRAGMENT
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
 
 }
