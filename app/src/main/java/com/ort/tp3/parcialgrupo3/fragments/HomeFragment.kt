@@ -50,9 +50,15 @@ class HomeFragment : Fragment() , OnProductClickedListener {
         val product4 = Product("Heladera no frost", Images.heladera, 80000.0)
         val product5 = Product("PC Gamer", Images.pcGamer, 150000.0)
         val product6 = Product("Campera invierno", Images.camperaInvierno, 30000.0)
+        val product7 = Product("Campera verano", Images.camperaInvierno, 20000.0)
+        val product8 = Product("Smart TV 4K", Images.pcGamer, 100000.0)
+        val product9 = Product("Notebook", Images.pcGamer, 120000.0)
+        val product10 = Product("Smartphone", Images.pixel, 50000.0)
+
+
 
         // Lleno una lista con productos que cree a mano
-        productList = listOf(product1, product2, product3, product4, product5, product6)
+        productList = listOf(product1, product2, product3, product4, product5, product6, product7, product8, product9, product10)
 
         // Configuro el recyclerview y le paso un Adapter
         val layoutManager = LinearLayoutManager(context)
@@ -61,7 +67,7 @@ class HomeFragment : Fragment() , OnProductClickedListener {
     }
 
     override fun onProductSelected(product: Product) {
-        TODO("Not yet implemented")
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(product))
     }
 
 }
