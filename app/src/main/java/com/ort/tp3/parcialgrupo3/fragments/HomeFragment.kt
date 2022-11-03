@@ -36,7 +36,7 @@ class HomeFragment : Fragment() , OnProductClickedListener {
 
         productsRecyclerView = view.findViewById(R.id.productRecyclerView)
         title = view.findViewById(R.id.title)
-
+        arguments?.getString("username")?.let { UserSession.userName = it }
         // Pongo el nombre del usuario en el titulo.
         // Advertencia: Al momento de mostrar un texto al usuario siempre usar un String resource. Nunca hardcodear de
         // esta manera.
