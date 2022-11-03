@@ -11,7 +11,7 @@ import com.ort.tp3.parcialgrupo3.R
 class SplashActivity : AppCompatActivity() {
 
     companion object {
-        private const val SPLASH_TIME_OUT:Long = 3000 // 3 seconds
+        private const val SPLASH_TIME_OUT: Long = 3000
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +20,8 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed(
             {
-                startActivity(Intent(this,MainActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
-            }
-            , SPLASH_TIME_OUT)
+            }, SPLASH_TIME_OUT)
     }
 }

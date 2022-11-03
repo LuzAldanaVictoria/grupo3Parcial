@@ -8,10 +8,10 @@ import com.ort.tp3.parcialgrupo3.R
 import com.ort.tp3.parcialgrupo3.holders.ProductViewHolder
 import com.ort.tp3.parcialgrupo3.listeners.OnProductClickedListener
 
-class ProductAdapter (
+class ProductAdapter(
     private val productList: List<Product>,
     private val onProductClickedListener: OnProductClickedListener
-    ) : RecyclerView.Adapter<ProductViewHolder>() {
+) : RecyclerView.Adapter<ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.product_item, parent, false)
@@ -27,4 +27,4 @@ class ProductAdapter (
     }
 
     override fun getItemCount() = productList.size
- }
+}

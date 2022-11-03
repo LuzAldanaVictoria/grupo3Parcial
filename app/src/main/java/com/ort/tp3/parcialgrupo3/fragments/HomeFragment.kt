@@ -29,7 +29,6 @@ class HomeFragment : Fragment() , OnProductClickedListener {
         savedInstanceState: Bundle?
     ): View? {
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -39,9 +38,6 @@ class HomeFragment : Fragment() , OnProductClickedListener {
         productsRecyclerView = view.findViewById(R.id.productRecyclerView)
         title = view.findViewById(R.id.title)
         arguments?.getString("username")?.let { UserSession.userName = it }
-        // Pongo el nombre del usuario en el titulo.
-        // Advertencia: Al momento de mostrar un texto al usuario siempre usar un String resource. Nunca hardcodear de
-        // esta manera.
         title.text = "Hola, ${UserSession.userName}"
         fillProductList()
     }
@@ -59,11 +55,8 @@ class HomeFragment : Fragment() , OnProductClickedListener {
         val product10 = Product("Smartphone", Images.pixel, 50000.0)
 
 
-
-        // Lleno una lista con productos que cree a mano
         productList = listOf(product1, product2, product3, product4, product5, product6, product7, product8, product9, product10)
 
-        // Configuro el recyclerview y le paso un Adapter
         val layoutManager = LinearLayoutManager(context)
         productsRecyclerView.layoutManager = layoutManager
         productsRecyclerView.adapter = ProductAdapter(productList, this)

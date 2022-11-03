@@ -3,7 +3,7 @@ package com.ort.tp3.parcialgrupo3.models
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Product (val description: String?, val imageLink: String?, val price: Double) :
+data class Product(val description: String?, val imageLink: String?, val price: Double) :
     Parcelable {
 
     constructor(parcel: Parcel) : this(
@@ -27,7 +27,7 @@ data class Product (val description: String?, val imageLink: String?, val price:
             return Product(parcel)
         }
 
-    override fun newArray(size: Int): Array<Product?> {
+        override fun newArray(size: Int): Array<Product?> {
             return arrayOfNulls(size)
         }
     }

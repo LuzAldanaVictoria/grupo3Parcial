@@ -1,7 +1,6 @@
 package com.ort.tp3.parcialgrupo3.utils
 
 object Images {
-    // Los links a las imagenes de los productos que se muestran en la lista
     const val pixel = "https://m.media-amazon.com/images/I/81AqwYyZjzL._AC_SX679_.jpg"
     const val remera =
         "https://www.remerasya.com/media/catalog/product/cache/839e5c25c645eac744603bf9726fb4fd/e/s/est8.jpg"
