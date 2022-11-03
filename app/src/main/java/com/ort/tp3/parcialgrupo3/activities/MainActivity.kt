@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        getActionBar()?.hide()
 
         val objectIntent : Intent = intent
         var user = objectIntent.getStringExtra("Usuario")
-        Toast.makeText(this, user.toString(), Toast.LENGTH_SHORT).show()
 
         navController = Navigation.findNavController(this,R.id.navhost)
         drawerLayout = findViewById(R.id.drawer_layout)
